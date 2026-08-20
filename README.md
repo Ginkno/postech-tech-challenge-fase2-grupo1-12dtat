@@ -10,19 +10,19 @@
 
 | Campo | Valor |
 |---|---|
-| Turma | <!-- PREENCHER: ex. 12DTAT --> |
-| Grupo | <!-- PREENCHER: ex. Grupo 07 --> |
-| Data de entrega | <!-- PREENCHER: DD/MM/AAAA --> |
+| Turma | 12DTAT |
+| Grupo | Grupo 1 |
+| Data de entrega | A definir |
 
 ### Integrantes
 
 | Nome completo | RM | E-mail |
 |---|---|---|
-| <!-- PREENCHER --> | RM000000 | |
-| | | |
-| | | |
-| | | |
-| | | |
+| Isidoro Dupp da Silva Leite | RM000000 | dupp@bb.com.br |
+| Marcia Cristina Silva Mayrinck | RM000000 | mmayrinck@bb.com.br |
+| Silvia Junko Iwashita Alvarenga | RM000000 | silvinhaji@yahoo.com.br |
+| Elizabeth Aparecida da Silva de Carvalho | RM000000 | elizabeth.carvalho@bb.com.br |
+| Gilberto de Souza Costa Filho | RM00000 | gilberto.filho@bb.com.br |
 
 ---
 
