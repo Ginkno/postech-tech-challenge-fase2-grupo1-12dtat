@@ -60,10 +60,13 @@ Otimização da Decisão: Permitir o ajuste fino das métricas de aprovação pa
 
 ### Dataset
 
+Existem 2 datasets usados nos notebooks:
+1. Application record - contém as informações gerais do solicitante, tais como gênero, nível de escolaridade, renda, ocupação, etc)
+
 | Campo | Valor |
 |---|---|
 | Fonte | <!-- PREENCHER: URL --> |
-| Linhas × colunas | <!-- PREENCHER --> |
+| Linhas × colunas | 253877 x 18 |
 | Período / versão | <!-- PREENCHER --> |
 | Licença de uso | <!-- PREENCHER --> |
 
@@ -71,8 +74,41 @@ Descrição das variáveis:
 
 | Variável | Tipo | Descrição |
 |---|---|---|
-| | | |
+| ID | int64 | Número do cliente |
+| CODE_GENDER | object  | Gênero |
+| FLAG_OWN_CAR | object  | Tem algum carro? |
+| FLAG_OWN_REALTY | object  | Existe alguma propriedade? |
+| CNT_CHILDREN | int64 | Número de filhos |
+| AMT_INCOME_TOTAL | float64 | Renda anual |
+| NAME_INCOME_TYPE | object | Categoria de renda |
+| NAME_EDUCATION_TYPE | object | Nível de escolaridade |
+| NAME_FAMILY_STATUS | object | Estado civil |
+| NAME_HOUSING_TYPE | object | Estilo de vida |
+| DAYS_BIRTH | float64 | Aniversário - Conte regressivamente a partir do dia atual (0), -1 significa ontem. |
+| DAYS_EMPLOYED | float64 |  Data de início do emprego - Conte regressivamente a partir do dia atual (0). Se positivo, significa que a pessoa está atualmente desempregada. |
+| FLAG_MOBIL | float64 | Existe algum telefone celular? |
+| FLAG_WORK_PHONE | float64 | Existe algum telefone de trabalho? |
+| FLAG_PHONE | float64 | Tem algum telefone? |
+| FLAG_EMAIL | float64 | Existe algum e-mail? |
+| OCCUPATION_TYPE | object  | Ocupação |
+| CNT_FAM_MEMBERS | float64 | Tamanho familiar |
 
+2. Credit record - contém os registros de pagamentos dos empréstimos feitos pelos solicitantes.
+
+| Campo | Valor |
+|---|---|
+| Fonte | <!-- PREENCHER: URL --> |
+| Linhas × colunas | 1048575 x 3 |
+| Período / versão | <!-- PREENCHER --> |
+| Licença de uso | <!-- PREENCHER --> |
+
+Descrição das variáveis:
+
+| Variável | Tipo | Descrição |
+|---|---|---|
+| ID | int64 | Número do cliente |
+| MONTHS_BALANCE | int64   | Mês recorde - O mês dos dados extraídos é o ponto de partida; retrocedendo, 0 representa o mês atual, -1 o mês anterior e assim por diante. |
+| STATUS | object  | 0: 1 a 29 dias de atraso 1: 30 a 59 dias de atraso 2: 60 a 89 dias de atraso 3: 90 a 119 dias de atraso 4: 120 a 149 dias de atraso 5: Dívidas vencidas ou incobráveis, baixas contábeis por mais de 150 dias C: Quitado neste mês X: Sem empréstimo neste mês |
 ---
 
 ## 4. Como reproduzir
