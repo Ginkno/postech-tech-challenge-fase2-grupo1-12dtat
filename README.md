@@ -1,16 +1,12 @@
 # Tech Challenge — Fase 2 | POSTECH Data Analytics
 
-> **INSTRUÇÕES:** este README é um template. Substitua **todos** os blocos marcados com
-> `<!-- PREENCHER -->` e apague as linhas de instrução antes de submeter.
-> O README vale **3 pontos** na Dimensão 1 da rúbrica.
-
 ---
 
 ## 1. Identificação
 
 | Campo | Valor |
 |---|---|
-| Turma | <!-- PREENCHER: ex. 12DTAT --> |
+| Turma | 2DTATBB |
 | Grupo | <!-- PREENCHER: ex. Grupo 07 --> |
 | Data de entrega | <!-- PREENCHER: DD/MM/AAAA --> |
 
@@ -18,21 +14,19 @@
 
 | Nome completo | RM | E-mail |
 |---|---|---|
-| <!-- PREENCHER --> | RM000000 | |
-| | | |
-| | | |
-| | | |
-| | | |
+| ELIZABETH APARECIDA DE CARVALHO E SILVA | RM377828 | elizabeth.carvalho@bb.com.br |
+| GILBERTO DE SOUZA COSTA FILHO | | gilberto.filho@bb.com.br |
+| ISIDORO DUPP DA SILVA LEITE | | dupp@bb.com.br |
+| SILVIA JUNKO IWASHITA ALVARENGA| | silvinhaji@yahoo.com.br |
 
 ---
 
 ## 2. Links da entrega
 
-Estes três links são **obrigatórios** e devem ser idênticos aos do PDF de submissão.
 
 | Item | Link |
 |---|---|
-| Repositório | <!-- PREENCHER: URL pública do GitHub --> |
+| Repositório | https://github.com/Ginkno/postech-tech-challenge-fase2-grupo1-12dtat |
 | Vídeo executivo (≤ 5 min) | <!-- PREENCHER: YouTube não listado / Drive com acesso liberado --> |
 | Apresentação | <!-- PREENCHER: link do arquivo em `docs/` ou Drive --> |
 
@@ -43,7 +37,21 @@ Estes três links são **obrigatórios** e devem ser idênticos aos do PDF de su
 
 ## 3. O problema
 
-<!-- PREENCHER: contexto de negócio e a motivação para o uso de Machine Learning. -->
+A concessão de cartão de crédito é uma das principais operações de instituições financeiras, permitindo a expansão da base de clientes e a geração de receita. No entanto, a concessão inadvertida de crédito a perfis com alto risco de inadimplência gera prejuízos diretos para a instituição, ao mesmo tempo em que a recusa indevida a bons pagadores reduz o potencial de faturamento e prejudica a experiência do cliente.
+
+O desafio da instituição é avaliar com precisão o perfil financeiro e comportamental dos solicitantes (considerando atributos como renda, ocupação, estado civil e histórico profissional) para decidir de forma assertiva quem deve ter o pedido aprovado.
+
+A análise tradicional de crédito baseada em regras manuais ou modelos estáticos costuma ser rígida, lenta e propensa a erros de viés ou desatualização diante de novas dinâmicas de mercado.
+
+O uso de Machine Learning se justifica por:
+
+Automação e Escala: Processar grandes volumes de solicitações em tempo real, reduzindo o tempo de resposta ao cliente.
+
+Identificação de Padrões Complexos: Algoritmos de aprendizado supervisionado conseguem mapear relações não lineares e cruzamentos entre variáveis pessoais e financeiras que não seriam evidentes em análises convencionais.
+
+Redução da Inadimplência: Aumentar a precisão na discriminação entre bons e maus pagadores, diminuindo o risco de default e os custos de cobrança.
+
+Otimização da Decisão: Permitir o ajuste fino das métricas de aprovação para equilibrar o nível de risco aceitável com a taxa de conversão de novos clientes.
 
 ### Variável alvo
 
