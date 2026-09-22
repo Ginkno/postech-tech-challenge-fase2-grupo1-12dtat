@@ -7,17 +7,17 @@
 | Campo | Valor |
 |---|---|
 | Turma | 2DTATBB |
-| Grupo | <!-- PREENCHER: ex. Grupo 07 --> |
-| Data de entrega | <!-- PREENCHER: DD/MM/AAAA --> |
+| Grupo | 1 |
+| Data de entrega | 10/10/2026 |
 
 ### Integrantes
 
 | Nome completo | RM | E-mail |
 |---|---|---|
 | ELIZABETH APARECIDA DE CARVALHO E SILVA | RM377828 | elizabeth.carvalho@bb.com.br |
-| GILBERTO DE SOUZA COSTA FILHO | | gilberto.filho@bb.com.br |
-| ISIDORO DUPP DA SILVA LEITE | | dupp@bb.com.br |
-| SILVIA JUNKO IWASHITA ALVARENGA| | silvinhaji@yahoo.com.br |
+| GILBERTO DE SOUZA COSTA FILHO | RM377815 | gilberto.filho@bb.com.br |
+| ISIDORO DUPP DA SILVA LEITE | RM377806 | dupp@bb.com.br |
+| SILVIA JUNKO IWASHITA ALVARENGA| RM377768 | silvinhaji@yahoo.com.br |
 
 ---
 
@@ -30,8 +30,6 @@
 | Vídeo executivo (≤ 5 min) | <!-- PREENCHER: YouTube não listado / Drive com acesso liberado --> |
 | Apresentação | <!-- PREENCHER: link do arquivo em `docs/` ou Drive --> |
 
-> ⚠️ Repositório privado ou inacessível **zera** toda a Dimensão 1 da rúbrica.
-> Confira o acesso em uma janela anônima antes de enviar.
 
 ---
 
@@ -65,10 +63,10 @@ Existem 2 datasets usados nos notebooks:
 
 | Campo | Valor |
 |---|---|
-| Fonte | <!-- PREENCHER: URL --> |
+| Fonte | [application_record.csv](https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction/data?select=application_record.csv) |
 | Linhas × colunas | 253877 x 18 |
 | Período / versão | <!-- PREENCHER --> |
-| Licença de uso | <!-- PREENCHER --> |
+| Licença de uso | [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/) |
 
 Descrição das variáveis:
 
@@ -97,10 +95,10 @@ Descrição das variáveis:
 
 | Campo | Valor |
 |---|---|
-| Fonte | <!-- PREENCHER: URL --> |
+| Fonte | [credit_record.csv](https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction/data?select=credit_record.csv) |
 | Linhas × colunas | 1048575 x 3 |
 | Período / versão | <!-- PREENCHER --> |
-| Licença de uso | <!-- PREENCHER --> |
+| Licença de uso | [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/) |
 
 Descrição das variáveis:
 
