@@ -112,8 +112,8 @@ Descrição das variáveis:
 ## 4. Como reproduzir
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
-cd <NOME_DO_REPOSITORIO>
+git clone https://github.com/Ginkno/postech-tech-challenge-fase2-grupo1-12dtat.git
+cd postech-tech-challenge-fase2-grupo1-12dtat
 
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
