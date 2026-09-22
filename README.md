@@ -186,4 +186,12 @@ Antes de enviar, percorra o [`CHECKLIST.md`](CHECKLIST.md).
 
 ## 8. Tecnologias
 
-<!-- PREENCHER: Python 3.11, pandas, scikit-learn, ... -->
+| Tecnologia | Versão |
+|---|---|
+| pandas | 2.2.3 | 
+| numpy | 2.1.3 |
+| scikit-learn | 1.5.2 |
+| matplotlib | 3.9.2 |
+| seaborn | 0.13.2 |
+| jupyter | 1.1.1 |
+| joblib | 1.4.2 |
