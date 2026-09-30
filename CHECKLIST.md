@@ -13,27 +13,27 @@ Rode esta lista antes de submeter. Cada item corresponde a pontos na rúbrica.
 - [x] Pastas `data/`, `notebooks/` e `docs/` presentes
 - [ ] `README.md` sem nenhum `<!-- PREENCHER -->` restante
 - [ ] `README.md` descreve projeto, dataset, como reproduzir e conclusões
-- [ ] `requirements.txt` com as bibliotecas efetivamente usadas e versões fixas
-- [ ] Notebooks com células numeradas em ordem crescente
-- [ ] Saídas dos gráficos salvas nos notebooks
-- [ ] Nenhum dataset ou arquivo `.pkl` commitado por engano
-- [ ] Sem arquivos `Untitled.ipynb`, `teste.py`, `.DS_Store`
+- [x] `requirements.txt` com as bibliotecas efetivamente usadas e versões fixas
+- [x] Notebooks com células numeradas em ordem crescente
+- [x] Saídas dos gráficos salvas nos notebooks
+- [x] Nenhum dataset ou arquivo `.pkl` commitado por engano
+- [x] Sem arquivos `Untitled.ipynb`, `teste.py`, `.DS_Store`
 
 ## Conteúdo
 
 - [ ] Contexto de negócio e motivação para ML (Dim. 2)
-- [ ] Variável alvo definida, com limiar justificado (Dim. 2)
+- [x] Variável alvo definida, com limiar justificado (Dim. 2)
 - [ ] Fonte, dimensões e dicionário de variáveis do dataset (Dim. 2)
-- [ ] Distribuições, correlações, outliers e balanceamento — todos com texto interpretativo (Dim. 3)
-- [ ] Nulos verificados e documentados (Dim. 4)
-- [ ] Normalização aplicada com justificativa (Dim. 4)
-- [ ] Feature engineering feita **ou** a não-aplicação justificada (Dim. 4)
-- [ ] Pelo menos **dois** modelos distintos treinados (Dim. 5)
-- [ ] Split ou cross-validation documentado, sem vazamento (Dim. 5)
-- [ ] `RANDOM_STATE` fixo em todos os pontos aleatórios (Dim. 5)
-- [ ] Métricas além de acurácia: F1, AUC-ROC, precisão, recall (Dim. 6)
-- [ ] Escolha das métricas justificada pelo contexto (Dim. 6)
-- [ ] Feature importance analisada e comentada (Dim. 6)
+- [x] Distribuições, correlações, outliers e balanceamento — todos com texto interpretativo (Dim. 3)
+- [x] Nulos verificados e documentados (Dim. 4)
+- [x] Normalização aplicada com justificativa (Dim. 4)
+- [x] Feature engineering feita **ou** a não-aplicação justificada (Dim. 4)
+- [x] Pelo menos **dois** modelos distintos treinados (Dim. 5)
+- [x] Split ou cross-validation documentado, sem vazamento (Dim. 5)
+- [x] `RANDOM_STATE` fixo em todos os pontos aleatórios (Dim. 5)
+- [x] Métricas além de acurácia: F1, AUC-ROC, precisão, recall (Dim. 6)
+- [x] Escolha das métricas justificada pelo contexto (Dim. 6)
+- [x] Feature importance analisada e comentada (Dim. 6)
 - [ ] Implicações práticas discutidas em linguagem de negócio (Dim. 6)
 
 ## Apresentação e vídeo (10 pts)
