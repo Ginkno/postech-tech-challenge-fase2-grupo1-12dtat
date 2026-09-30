@@ -4,13 +4,13 @@ Rode esta lista antes de submeter. Cada item corresponde a pontos na rúbrica.
 
 ## Acesso (elimina a causa nº 1 de perda de nota)
 
-- [$\textcolor{royalblue}{\textbf{x}}$] Repositório **público** — confirmado em janela anônima
+- [x] Repositório **público** — confirmado em janela anônima
 - [ ] Vídeo abre sem pedir permissão — confirmado em janela anônima
 - [ ] Apresentação abre e está em PDF
 
 ## Repositório (10 pts)
 
-- [] Pastas `data/`, `notebooks/` e `docs/` presentes
+- [x] Pastas `data/`, `notebooks/` e `docs/` presentes
 - [ ] `README.md` sem nenhum `<!-- PREENCHER -->` restante
 - [ ] `README.md` descreve projeto, dataset, como reproduzir e conclusões
 - [x] `requirements.txt` com as bibliotecas efetivamente usadas e versões fixas
