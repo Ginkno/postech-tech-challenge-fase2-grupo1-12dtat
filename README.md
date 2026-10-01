@@ -5,7 +5,7 @@
 ## 1. Identificação
 
 | Campo | Valor |
-|---|---|
+| --- | --- |
 | Turma | 2DTATBB |
 | Grupo | 1 |
 | Data de entrega | 10/10/2026 |
@@ -13,23 +13,21 @@
 ### Integrantes
 
 | Nome completo | RM | E-mail |
-|---|---|---|
-| ELIZABETH APARECIDA DE CARVALHO E SILVA | RM377828 | elizabeth.carvalho@bb.com.br |
-| GILBERTO DE SOUZA COSTA FILHO | RM377815 | gilberto.filho@bb.com.br |
-| ISIDORO DUPP DA SILVA LEITE | RM377806 | dupp@bb.com.br |
-| SILVIA JUNKO IWASHITA ALVARENGA| RM377768 | silvinhaji@yahoo.com.br |
+| --- | --- | --- |
+| ELIZABETH APARECIDA DE CARVALHO E SILVA | RM377828 | <elizabeth.carvalho@bb.com.br> |
+| GILBERTO DE SOUZA COSTA FILHO | RM377815 | <gilberto.filho@bb.com.br> |
+| ISIDORO DUPP DA SILVA LEITE | RM377806 | <dupp@bb.com.br> |
+| SILVIA JUNKO IWASHITA ALVARENGA | RM377768 | <silvinhaji@yahoo.com.br> |
 
 ---
 
 ## 2. Links da entrega
 
-
 | Item | Link |
-|---|---|
-| Repositório | https://github.com/Ginkno/postech-tech-challenge-fase2-grupo1-12dtat |
+| --- | --- |
+| Repositório | <https://github.com/Ginkno/postech-tech-challenge-fase2-grupo1-12dtat> |
 | Vídeo executivo (≤ 5 min) | <!-- PREENCHER: YouTube não listado / Drive com acesso liberado --> |
 | Apresentação | <!-- PREENCHER: link do arquivo em `docs/` ou Drive --> |
-
 
 ---
 
@@ -59,10 +57,11 @@ Otimização da Decisão: Permitir o ajuste fino das métricas de aprovação pa
 ### Dataset
 
 Existem 2 datasets usados nos notebooks:
-1. Application record - contém as informações gerais do solicitante, tais como gênero, nível de escolaridade, renda, ocupação, etc)
+
+1. Application record - contém as informações gerais do solicitante, tais como gênero, nível de escolaridade, renda, ocupação, etc
 
 | Campo | Valor |
-|---|---|
+| --- | --- |
 | Fonte | [application_record.csv](https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction/data?select=application_record.csv) |
 | Linhas × colunas | 253877 x 18 |
 | Licença de uso | [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/) |
@@ -70,11 +69,11 @@ Existem 2 datasets usados nos notebooks:
 Descrição das variáveis:
 
 | Variável | Tipo | Descrição |
-|---|---|---|
+| --- | --- | --- |
 | ID | int64 | Número do cliente |
-| CODE_GENDER | object  | Gênero |
-| FLAG_OWN_CAR | object  | Tem algum carro? |
-| FLAG_OWN_REALTY | object  | Existe alguma propriedade? |
+| CODE_GENDER | object | Gênero |
+| FLAG_OWN_CAR | object | Tem algum carro? |
+| FLAG_OWN_REALTY | object | Existe alguma propriedade? |
 | CNT_CHILDREN | int64 | Número de filhos |
 | AMT_INCOME_TOTAL | float64 | Renda anual |
 | NAME_INCOME_TYPE | object | Categoria de renda |
@@ -82,18 +81,18 @@ Descrição das variáveis:
 | NAME_FAMILY_STATUS | object | Estado civil |
 | NAME_HOUSING_TYPE | object | Estilo de vida |
 | DAYS_BIRTH | float64 | Aniversário - Conte regressivamente a partir do dia atual (0), -1 significa ontem. |
-| DAYS_EMPLOYED | float64 |  Data de início do emprego - Conte regressivamente a partir do dia atual (0). Se positivo, significa que a pessoa está atualmente desempregada. |
+| DAYS_EMPLOYED | float64 | Data de início do emprego - Conte regressivamente a partir do dia atual (0). Se positivo, significa que a pessoa está atualmente desempregada. |
 | FLAG_MOBIL | float64 | Existe algum telefone celular? |
 | FLAG_WORK_PHONE | float64 | Existe algum telefone de trabalho? |
 | FLAG_PHONE | float64 | Tem algum telefone? |
 | FLAG_EMAIL | float64 | Existe algum e-mail? |
-| OCCUPATION_TYPE | object  | Ocupação |
+| OCCUPATION_TYPE | object | Ocupação |
 | CNT_FAM_MEMBERS | float64 | Tamanho familiar |
 
-2. Credit record - contém os registros de pagamentos dos empréstimos feitos pelos solicitantes.
+2.Credit record - contém os registros de pagamentos dos empréstimos feitos pelos solicitantes.
 
 | Campo | Valor |
-|---|---|
+| --- | --- |
 | Fonte | [credit_record.csv](https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction/data?select=credit_record.csv) |
 | Linhas × colunas | 1048575 x 3 |
 | Licença de uso | [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/) |
@@ -101,10 +100,11 @@ Descrição das variáveis:
 Descrição das variáveis:
 
 | Variável | Tipo | Descrição |
-|---|---|---|
+| --- | --- | --- |
 | ID | int64 | Número do cliente |
-| MONTHS_BALANCE | int64   | Mês recorde - O mês dos dados extraídos é o ponto de partida; retrocedendo, 0 representa o mês atual, -1 o mês anterior e assim por diante. |
-| STATUS | object  | 0: 1 a 29 dias de atraso 1: 30 a 59 dias de atraso 2: 60 a 89 dias de atraso 3: 90 a 119 dias de atraso 4: 120 a 149 dias de atraso 5: Dívidas vencidas ou incobráveis, baixas contábeis por mais de 150 dias C: Quitado neste mês X: Sem empréstimo neste mês |
+| MONTHS_BALANCE | int64 | Mês recorde - O mês dos dados extraídos é o ponto de partida; retrocedendo, 0 representa o mês atual, -1 o mês anterior e assim por diante. |
+| STATUS | object | 0: 1 a 29 dias de atraso 1: 30 a 59 dias de atraso 2: 60 a 89 dias de atraso 3: 90 a 119 dias de atraso 4: 120 a 149 dias de atraso 5: Dívidas vencidas ou incobráveis, baixas contábeis por mais de 150 dias C: Quitado neste mês X: Sem empréstimo neste mês |
+
 ---
 
 ## 4. Como reproduzir
@@ -126,7 +126,7 @@ veja `data/README.md`).
 Depois execute os notebooks nesta ordem:
 
 | # | Notebook | O que faz |
-|---|---|---|
+| --- | --- | --- |
 | 1 | `notebooks/01_eda.ipynb` | Análise exploratória |
 | 2 | `notebooks/02_preprocessamento.ipynb` | Limpeza, escala e feature engineering |
 | 3 | `notebooks/03_modelagem.ipynb` | Treino e comparação dos modelos |
@@ -141,7 +141,7 @@ exatamente os números da seção 5.
 ## 5. Resultados
 
 | Modelo | Acurácia | Precisão | Recall | F1 | AUC-ROC |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | XGBoost | 99,34% | 62,5% | 30,61% | 41,09% | 91,18% |
 | | | | | | |
 
@@ -166,7 +166,7 @@ exatamente os números da seção 5.
 
 Uma das principais limitações foi a quantidade pessoas classificadas como maus pagadores. Devido a ser uma amostra pequena dentro de um grande rol ded clientes,
 foi necessário aplicar métodos de aperfeiçoamento do modelo para atingimento de melhores medições em relação as métricas (F1-Score principalmente). Em outros datasets que testamos, mesmo com
-aplicação de técnicas de oversampling/undersampling para aumentar a quantidade de clientes que refletissem mais o perfil dos maus pagadores, apesar de ter tido melhora em aspectos relacionados a 
+aplicação de técnicas de oversampling/undersampling para aumentar a quantidade de clientes que refletissem mais o perfil dos maus pagadores, apesar de ter tido melhora em aspectos relacionados a
 métricas de precision em relação a ambas classificações, a métrica de recall permaneceu alta, dificultando a previsão de perfis mau pagadores.
 
 ---
@@ -188,8 +188,8 @@ Antes de enviar, percorra o [`CHECKLIST.md`](CHECKLIST.md).
 ## 8. Tecnologias
 
 | Tecnologia | Versão |
-|---|---|
-| pandas | 2.2.3 | 
+| --- | --- |
+| pandas | 2.2.3 |
 | numpy | 2.1.3 |
 | scikit-learn | 1.5.2 |
 | matplotlib | 3.9.2 |
