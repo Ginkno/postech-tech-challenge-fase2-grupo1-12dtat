@@ -51,8 +51,15 @@ Otimização da Decisão: Permitir o ajuste fino das métricas de aprovação pa
 
 ### Variável alvo
 
-<!-- PREENCHER: qual é a variável alvo, como foi definida e — se houve binarização —
-     qual limiar foi adotado e por quê. Justifique com base na distribuição das classes. -->
+Definição da Variável Alvo: IS_BAD_PAYER
+
+A variável alvo IS_BAD_PAYER foi definida para identificar clientes que apresentaram um atraso de 60 dias ou mais (ou seja, risk_score igual ou superior a 3) em seu histórico de crédito durante os últimos 12 meses (MAX_RISK_SCORE_RECENT).
+
+A utilização da janela recente busca capturar comportamentos mais representativos da condição atual do cliente, enquanto a exigência simultânea de atraso relevante e elevado risco reduz a classificação inadequada de clientes que apresentaram apenas atrasos pontuais ou de baixa severidade.
+
+IS_BAD_PAYER = 1 (Mau Pagador): Se o MAX_RISK_SCORE_RECENT for maior ou igual a 3 (o que corresponde a um atraso de 60-89 dias, ou mais grave, nos últimos 12 meses).
+
+IS_BAD_PAYER = 0 (Bom Pagador): Caso contrário. Esta lógica foca na recência e na gravidade do atraso, o que pode ser um indicador mais relevante do risco de crédito atual de um cliente.
 
 ### Dataset
 
