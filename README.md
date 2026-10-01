@@ -65,7 +65,6 @@ Existem 2 datasets usados nos notebooks:
 |---|---|
 | Fonte | [application_record.csv](https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction/data?select=application_record.csv) |
 | Linhas × colunas | 253877 x 18 |
-| Período / versão | <!-- PREENCHER --> |
 | Licença de uso | [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/) |
 
 Descrição das variáveis:
@@ -97,7 +96,6 @@ Descrição das variáveis:
 |---|---|
 | Fonte | [credit_record.csv](https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction/data?select=credit_record.csv) |
 | Linhas × colunas | 1048575 x 3 |
-| Período / versão | <!-- PREENCHER --> |
 | Licença de uso | [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/) |
 
 Descrição das variáveis:
@@ -166,7 +164,10 @@ exatamente os números da seção 5.
 
 ### Limitações e próximos passos
 
-<!-- PREENCHER -->
+Uma das principais limitações foi a quantidade pessoas classificadas como maus pagadores. Devido a ser uma amostra pequena dentro de um grande rol ded clientes,
+foi necessário aplicar métodos de aperfeiçoamento do modelo para atingimento de melhores medições em relação as métricas (F1-Score principalmente). Em outros datasets que testamos, mesmo com
+aplicação de técnicas de oversampling/undersampling para aumentar a quantidade de clientes que refletissem mais o perfil dos maus pagadores, apesar de ter tido melhora em aspectos relacionados a 
+métricas de precision em relação a ambas classificações, a métrica de recall permaneceu alta, dificultando a previsão de perfis mau pagadores.
 
 ---
 
