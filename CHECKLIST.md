@@ -10,11 +10,11 @@ Rode esta lista antes de submeter. Cada item corresponde a pontos na rúbrica.
 
 ## Repositório (10 pts)
 
-- [ ] Pastas `data/`, `notebooks/` e `docs/` presentes
-- [ ] `README.md` sem nenhum `<!-- PREENCHER -->` restante
-- [ ] `README.md` descreve projeto, dataset, como reproduzir e conclusões
-- [ ] `requirements.txt` com as bibliotecas efetivamente usadas e versões fixas
-- [ ] Notebooks com células numeradas em ordem crescente
+- [x] Pastas `data/`, `notebooks/` e `docs/` presentes
+- [x] `README.md` sem nenhum `<!-- PREENCHER -->` restante
+- [x] `README.md` descreve projeto, dataset, como reproduzir e conclusões
+- [x] `requirements.txt` com as bibliotecas efetivamente usadas e versões fixas
+- [x] Notebooks com células numeradas em ordem crescente
 - [ ] Saídas dos gráficos salvas nos notebooks
 - [ ] Nenhum dataset ou arquivo `.pkl` commitado por engano
 - [ ] Sem arquivos `Untitled.ipynb`, `teste.py`, `.DS_Store`
