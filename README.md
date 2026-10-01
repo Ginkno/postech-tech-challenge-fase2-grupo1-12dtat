@@ -144,10 +144,10 @@ exatamente os números da seção 5.
 
 | Modelo | Acurácia | Precisão | Recall | F1 | AUC-ROC |
 |---|---|---|---|---|---|
-| <!-- PREENCHER --> | | | | | |
+| XGBoost | 99,34% | 62,5% | 30,61% | 41,09% | 91,18% |
 | | | | | | |
 
-**Modelo escolhido:** <!-- PREENCHER --> — <!-- PREENCHER: por quê. -->
+**Modelo escolhido:** XGBoost — melhor performance de F1
 
 **Métricas priorizadas:** <!-- PREENCHER: justifique a escolha considerando o
      desbalanceamento de classes e o custo de cada tipo de erro no contexto do negócio. -->
