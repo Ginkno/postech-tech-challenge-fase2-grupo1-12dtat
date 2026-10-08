@@ -211,35 +211,18 @@ Na prática: Como a falta de preenchimento do campo de ocupação teve grande im
 
 O que isso significa: Além de exigir cadastros mais completos na entrada, o próximo passo para amadurecer o modelo é incorporar dados do comportamento transacional interno do cliente (como uso da conta corrente, histórico de pagamentos e saldo em conta) para além dos dados estáticos de cadastro.
 
-### Limitações e próximos passos
+### Limitações 
 
-1. Limitações do Modelo
-Elevada Taxa de Falsos Negativos (Vazamento de Risco): O modelo deixa de identificar 94 dos 112 inadimplentes no conjunto de teste (taxa de vazamento de 83,9%). Esses falsos negativos representam a principal limitação e a maior fonte de risco financeiro para a carteira.
+1. Elevada Taxa de Falsos Negativos (Vazamento de Risco): O modelo deixa de identificar 94 dos 112 inadimplentes no conjunto de teste (taxa de vazamento de 83,9%). Esses falsos negativos representam a principal limitação e a maior fonte de risco financeiro para a carteira.
+2. Geração de Falsos Positivos (Fricção Comercial): Para conseguir bloquear 18 inadimplentes, o modelo reprova indevidamente 388 bons pagadores, o que gera atrito comercial e potencial perda de novos clientes legítimos.
+3. Baixa Capacidade Discriminativa Geral: O poder de separação entre bons e maus pagadores ficou em ROC-AUC de 59,42%, o que indica um desempenho apenas ligeiramente superior ao de um classificador aleatório (50%).
+4. Alta Dependência de Dados Omissos: O modelo atribuiu alto peso preditivo à ausência de informações cadastrais (como a variável OCCUPATION_TYPE_Unknown), evidenciando a fragilidade da base de dados estática atual.
 
-Geração de Falsos Positivos (Fricção Comercial): Para conseguir bloquear 18 inadimplentes, o modelo reprova indevidamente 388 bons pagadores, o que gera atrito comercial e potencial perda de novos clientes legítimos.
-
-Baixa Capacidade Discriminativa Geral: O poder de separação entre bons e maus pagadores ficou em ROC-AUC de 59,42%, o que indica um desempenho apenas ligeiramente superior ao de um classificador aleatório (50%).
-
-Alta Dependência de Dados Omissos: O modelo atribuiu alto peso preditivo à ausência de informações cadastrais (como a variável OCCUPATION_TYPE_Unknown), evidenciando a fragilidade da base de dados estática atual.
-
-2. Próximos Passos
-Higienização e Enriquecimento Cadastral (Onboarding):
-
-Aprimorar os processos de coleta de dados no momento do cadastro para eliminar campos omissos (especialmente profissão/ocupação).
-
-Inclusão de Dados Transacionais Internos:
-
-Evoluir a modelagem integrando variáveis de comportamento financeiro dinâmico (movimentação de conta corrente, histórico de pagamentos e uso de outros produtos do banco) em vez de depender exclusivamente de dados cadastrais estáticos.
-
-Adoção de Estratégias de Concessão Progressiva de Crédito:
-
-Enquanto o modelo é aprimorado, implementar uma política de limites iniciais reduzidos e evolução progressiva conforme o histórico de pagamento do cliente.
-
-Criação de Canais de Contestação Comercial:
-
-Estabelecer fluxos de reanálise rápida (com solicitação simplificada de comprovantes) para resgatar os bons clientes bloqueados indevidamente pelo modelo.
-
----
+### Próximos passos
+  1.	Higienização e Enriquecimento Cadastral (Onboarding): Aprimorar os processos de coleta de dados no momento do cadastro para eliminar campos omissos (especialmente profissão/ocupação).
+  2.	Inclusão de Dados Transacionais Internos: Evoluir a modelagem integrando variáveis de comportamento financeiro dinâmico (movimentação de conta corrente, histórico de pagamentos e uso de outros produtos do banco) em vez de depender exclusivamente de dados cadastrais estáticos.
+  3.	Adopção de Estratégias de Concessão Progressiva de Crédito: Enquanto o modelo é aprimorado, implementar uma política de limites iniciais reduzidos e evolução progressiva conforme o histórico de pagamento do cliente.
+  4.	Criação de Canais de Contestação Comercial: Estabelecer fluxos de reanálise rápida (com solicitação simplificada de comprovantes) para resgatar os bons clientes bloqueados indevidamente pelo modelo.
 
 ## 7. Estrutura do repositório
 
