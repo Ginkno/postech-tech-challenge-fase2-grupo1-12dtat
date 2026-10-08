@@ -53,13 +53,13 @@ Otimização da Decisão: Permitir o ajuste fino das métricas de aprovação pa
 
 Definição da Variável Alvo: IS_BAD_PAYER
 
-A variável alvo IS_BAD_PAYER foi definida para identificar clientes que apresentaram um atraso de 60 dias ou mais (ou seja, risk_score igual ou superior a 3) em seu histórico de crédito durante os últimos 12 meses (MAX_RISK_SCORE_RECENT).
+A variável alvo IS_BAD_PAYER foi definida para identificar clientes que apresentaram um atraso de 60 dias ou mais (ou seja, STATUS igual ou superior a 2) em seu histórico de crédito completo.
 
-A utilização da janela recente busca capturar comportamentos mais representativos da condição atual do cliente, enquanto a exigência simultânea de atraso relevante e elevado risco reduz a classificação inadequada de clientes que apresentaram apenas atrasos pontuais ou de baixa severidade.
+A utilização do histórico completo permite mapear de forma fidedigna o perfil comportamental de risco de crédito do cliente.
 
-IS_BAD_PAYER = 1 (Mau Pagador): Se o MAX_RISK_SCORE_RECENT for maior ou igual a 3 (o que corresponde a um atraso de 60-89 dias, ou mais grave, nos últimos 12 meses).
+IS_BAD_PAYER = 1 (Mau Pagador): Se o cliente possui qualquer ocorrência de STATUS '2', '3', '4' ou '5' (atraso de 60 dias ou mais grave).
 
-IS_BAD_PAYER = 0 (Bom Pagador): Caso contrário. Esta lógica foca na recência e na gravidade do atraso, o que pode ser um indicador mais relevante do risco de crédito atual de um cliente.
+IS_BAD_PAYER = 0 (Bom Pagador): Caso contrário. Esta lógica foca na gravidade do atraso, estabelecendo uma clara diferenciação entre clientes com desvios pontuais e clientes com atrasos severos no histórico.
 
 ### Dataset
 
@@ -149,33 +149,95 @@ exatamente os números da seção 5.
 
 | Modelo | Acurácia | Precisão | Recall | F1 | AUC-ROC |
 | --- | --- | --- | --- | --- | --- |
-| XGBoost | 99,34% | 62,5% | 30,61% | 41,09% | 91,18% |
-| | | | | | |
+| Random Forest | 97,99% | 17,62% | 2,39% | 3,93% | 57,32% |
+| XGBoost | 94,02% |  6,09% | 16,12% | 8,81% | 57,76% |
+| Lightgbm | 88,33% |  3,43% | 21,35% | 5,90% | 56,57% |
 
-**Modelo escolhido:** XGBoost — melhor performance de F1
+**Modelo escolhido:** XGBoost — melhor performance de F1, sustentando por um bom Recall e a melhor relação de Precision
 
-**Métricas priorizadas:** <!-- PREENCHER: justifique a escolha considerando o
-     desbalanceamento de classes e o custo de cada tipo de erro no contexto do negócio. -->
+**Métricas priorizadas:** 
+1. As métricas priorizadas para a tomada de decisão e avaliação dos modelos foram F1-Score, Precision (Precisão), Recall (Revocação) e ROC-AUC.
+
+2. Justificativa pela Desconsideração da Acurácia (Desbalanceamento de Classes)
+A métrica de Acurácia foi descartada como indicador principal devido ao severo desbalanceamento de classes na base de dados (onde a vasta maioria dos clientes é de bons pagadores e apenas uma pequena fração é de maus pagadores).
+
+Em cenários assim, a acurácia gera uma falsa sensação de alto desempenho (um modelo ingênuo que aprovasse 100% dos clientes atingiria ~96% de acurácia, mas falharia completamente em identificar os maus pagadores).
+
+Por isso, utilizar o F1-Score (média harmônica entre Precision e Recall) e o ROC-AUC garante uma medição equilibrada do real poder de discriminação do modelo sobre a classe minoritária.
+
+3. Impacto Financeiro e Custo dos Erros no Negócio
+Falso Negativo (O Erro Mais Caro):
+
+O que é: O modelo classifica um mau pagador como bom pagador.
+
+Impacto no Negócio: A instituição concede crédito a um cliente inadimplente, gerando perda financeira direta (prejuízo/calote) e aumento do risco da carteira. É o erro prioritário a ser minimizado na concessão de crédito.
+
+Falso Positivo:
+
+O que é: O modelo classifica um bom pagador como mau pagador.
+
+Impacto no Negócio: Gera recusa indevida de crédito, resultando em custo de oportunidade de vendas, potencial insatisfação e atrito comercial com um cliente legítimo. Embora relevante para o crescimento comercial, seu custo imediato é menor do que absorver a inadimplência direta de um falso negativo.
 
 ---
 
 ## 6. Principais conclusões
 
-<!-- PREENCHER: 3 a 5 conclusões em linguagem de negócio.
-     Inclua quais variáveis mais influenciam o resultado e o que isso significa
-     na prática para quem vai usar o modelo. -->
+1. As 3 variáveis cadastrais que mais direcionam a decisão do modelo
+As variáveis de maior relevância no modelo foram:
 
-1.
-2.
-3.
+Condição de Aposentado/Pensionista (NAME_INCOME_TYPE_Pensioner): É a variável com maior peso, indicando que o perfil de renda fixa garantida exige uma segmentação de risco diferenciada.
+
+Morar com os Pais (NAME_HOUSING_TYPE_With parents): O segundo maior sinalizador, identificando perfil de dependência financeira ou público jovem em início de carreira.
+
+Ocupação Desconhecida/Não Informada (OCCUPATION_TYPE_Unknown): A ausência de dados profissionais informados no cadastro correlaciona-se fortemente com maior nível de risco.
+
+2. O modelo identifica a ponta de risco, mas não deve rodar em "piloto automático"
+Na prática: Das métricas do teste, o modelo gerou 18 inadimplentes bloqueados, mas deixou passar 94 inadimplentes (83,9% de falsos negativos).
+
+O que isso significa: O modelo atual atua como um filtro preliminar, mas não deve aprovar ou reprovar limites de forma 100% autônoma sem regras de negócio complementares ou análise humana.
+
+3. Estratégia de "Limite Inicial Reduzido" para mitigar a inadimplência passante
+Na prática: Para os clientes aprovados pelo modelo, a instituição financeira deve adotar a concessão de limites de crédito iniciais baixos e progressivos.
+
+O que isso significa: Conforme o cliente demonstra um histórico real de pagamento em meses subsequentes, o limite é ampliado gradualmente. Essa estratégia mitiga o prejuízo financeiro causado pelos inadimplentes que o modelo não conseguiu barrar na entrada.
+
+4. Redução da fricção comercial para resgatar bons clientes
+Na prática: Ao aplicar o corte de risco, o modelo acabou bloqueando 388 bons pagadores para conseguir capturar os maus pagadores.
+
+O que isso significa: Para não perder essas oportunidades de vendas e não frustrar clientes legítimos, a área comercial deve implementar alçadas de contestação rápida ou pedir comprovantes simplificados para reavaliar esses casos e liberar o crédito de forma segura.
+
+5. Ações prioritárias: higienização cadastral e inteligência transacional
+Na prática: Como a falta de preenchimento do campo de ocupação teve grande impacto nas previsões, a prioridade da equipe de negócio deve ser a higienização do cadastro no momento do onboarding.
+
+O que isso significa: Além de exigir cadastros mais completos na entrada, o próximo passo para amadurecer o modelo é incorporar dados do comportamento transacional interno do cliente (como uso da conta corrente, histórico de pagamentos e saldo em conta) para além dos dados estáticos de cadastro.
 
 ### Limitações e próximos passos
 
-Uma das principais limitações foi a quantidade pessoas classificadas como maus pagadores. Devido a ser uma amostra pequena dentro de um grande rol ded clientes,
-foi necessário aplicar métodos de aperfeiçoamento do modelo para atingimento de melhores medições em relação as métricas (F1-Score principalmente). Em outros datasets que testamos, mesmo com
-aplicação de técnicas de oversampling/undersampling para aumentar a quantidade de clientes que refletissem mais o perfil dos maus pagadores, apesar de ter tido melhora em aspectos relacionados a
-métricas de precision em relação a ambas classificações, a métrica de recall permaneceu alta, dificultando a previsão de perfis mau pagadores.
+1. Limitações do Modelo
+Elevada Taxa de Falsos Negativos (Vazamento de Risco): O modelo deixa de identificar 94 dos 112 inadimplentes no conjunto de teste (taxa de vazamento de 83,9%). Esses falsos negativos representam a principal limitação e a maior fonte de risco financeiro para a carteira.
 
+Geração de Falsos Positivos (Fricção Comercial): Para conseguir bloquear 18 inadimplentes, o modelo reprova indevidamente 388 bons pagadores, o que gera atrito comercial e potencial perda de novos clientes legítimos.
+
+Baixa Capacidade Discriminativa Geral: O poder de separação entre bons e maus pagadores ficou em ROC-AUC de 59,42%, o que indica um desempenho apenas ligeiramente superior ao de um classificador aleatório (50%).
+
+Alta Dependência de Dados Omissos: O modelo atribuiu alto peso preditivo à ausência de informações cadastrais (como a variável OCCUPATION_TYPE_Unknown), evidenciando a fragilidade da base de dados estática atual.
+
+2. Próximos Passos
+Higienização e Enriquecimento Cadastral (Onboarding):
+
+Aprimorar os processos de coleta de dados no momento do cadastro para eliminar campos omissos (especialmente profissão/ocupação).
+
+Inclusão de Dados Transacionais Internos:
+
+Evoluir a modelagem integrando variáveis de comportamento financeiro dinâmico (movimentação de conta corrente, histórico de pagamentos e uso de outros produtos do banco) em vez de depender exclusivamente de dados cadastrais estáticos.
+
+Adoção de Estratégias de Concessão Progressiva de Crédito:
+
+Enquanto o modelo é aprimorado, implementar uma política de limites iniciais reduzidos e evolução progressiva conforme o histórico de pagamento do cliente.
+
+Criação de Canais de Contestação Comercial:
+
+Estabelecer fluxos de reanálise rápida (com solicitação simplificada de comprovantes) para resgatar os bons clientes bloqueados indevidamente pelo modelo.
 ---
 
 ## 7. Estrutura do repositório
