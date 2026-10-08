@@ -238,6 +238,7 @@ Enquanto o modelo é aprimorado, implementar uma política de limites iniciais r
 Criação de Canais de Contestação Comercial:
 
 Estabelecer fluxos de reanálise rápida (com solicitação simplificada de comprovantes) para resgatar os bons clientes bloqueados indevidamente pelo modelo.
+
 ---
 
 ## 7. Estrutura do repositório
