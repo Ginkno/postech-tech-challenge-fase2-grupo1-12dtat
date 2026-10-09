@@ -149,8 +149,8 @@ exatamente os números da seção 5.
 
 | Modelo | Acurácia | Precisão | Recall | F1 | AUC-ROC |
 | --- | --- | --- | --- | --- | --- |
-| Random Forest | 97,99% | 17,62% | 2,39% | 3,93% | 57,32% |
 | XGBoost | 94,02% |  6,09% | 16,12% | 8,81% | 57,76% |
+| Random Forest | 97,99% | 17,62% | 2,39% | 3,93% | 57,32% |
 | Lightgbm | 88,33% |  3,43% | 21,35% | 5,90% | 56,57% |
 
 **Modelo escolhido:** XGBoost — melhor performance de F1, sustentando por um bom Recall e a melhor relação de Precision
