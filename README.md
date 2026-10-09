@@ -26,8 +26,8 @@
 | Item | Link |
 | --- | --- |
 | Repositório | <https://github.com/Ginkno/postech-tech-challenge-fase2-grupo1-12dtat> |
-| Vídeo executivo (≤ 5 min) | <!-- PREENCHER: YouTube não listado / Drive com acesso liberado --> |
-| Apresentação | <!-- PREENCHER: link do arquivo em `docs/` ou Drive --> |
+| Vídeo executivo (≤ 5 min) | https://www.youtube.com/watch?v=Jn4iVuvQ6WU |
+| Apresentação | https://github.com/Ginkno/postech-tech-challenge-fase2-grupo1-12dtat/blob/main/docs/apresentacao_executiva.pdf |
 
 ---
 
