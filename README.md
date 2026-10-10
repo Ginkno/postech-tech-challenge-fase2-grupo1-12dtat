@@ -249,3 +249,6 @@ Antes de enviar, percorra o [`CHECKLIST.md`](CHECKLIST.md).
 | seaborn | 0.13.2 |
 | jupyter | 1.1.1 |
 | joblib | 1.4.2 |
+| imbalanced-learn | 0.13.0 |
+| lightgbm | 4.5.0 |
+| xgboost | 2.1.3 |
