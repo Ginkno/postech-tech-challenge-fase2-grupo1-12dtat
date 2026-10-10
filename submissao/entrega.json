@@ -1,13 +1,15 @@
 {
-  "turma": "12DTAT",
-  "grupo": "Grupo 00",
+  "turma": "2DTATBB",
+  "grupo": "Grupo 01",
   "integrantes": [
-    { "nome": "Nome Completo do Integrante", "rm": "RM000000" },
-    { "nome": "Nome Completo do Integrante", "rm": "RM000000" }
+    { "nome": "ELIZABETH APARECIDA DE CARVALHO E SILVA", "rm": "RM377828" },
+    { "nome": "GILBERTO DE SOUZA COSTA FILHO", "rm": "RM377815" },
+    { "nome": "ISIDORO DUPP DA SILVA LEITE", "rm": "RM377806" },
+    { "nome": "SILVIA JUNKO IWASHITA ALVARENGA", "rm": "RM377768" }
   ],
   "links": {
-    "repositorio": "https://github.com/usuario/nome-do-repositorio",
-    "video": "https://www.youtube.com/watch?v=xxxxxxxxxxx",
-    "apresentacao": "https://github.com/usuario/nome-do-repositorio/blob/main/docs/apresentacao_executiva.pdf"
+    "repositorio": " https://github.com/Ginkno/postech-tech-challenge-fase2-grupo1-12dtat",
+    "video": "https://www.youtube.com/watch?v=Jn4iVuvQ6WU",
+    "apresentacao": "https://github.com/Ginkno/postech-tech-challenge-fase2-grupo1-12dtat/blob/main/docs/apresentacao_executiva.pdf"
   }
 }
