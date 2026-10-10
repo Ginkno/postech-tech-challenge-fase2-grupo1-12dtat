@@ -13,9 +13,9 @@ Documente abaixo como obter os dados brutos, para que qualquer pessoa consiga re
 ## Como obter
 
 1. Baixe em: [Base de Dados Fase 2](https://drive.google.com/drive/folders/1rKpbaYI4vOweYaG-TXpGKEmM400uuGzw)
-2. Salve como: `
-    - data/raw/application_record.csv
-    - data/raw/credit_record.csv`
+2. Salve como: 
+    - `data/raw/application_record.csv`
+    - `data/raw/credit_record.csv`
 3. Checksum:
     | Código gerador de chave única | Hash |
     |---|---|
